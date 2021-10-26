@@ -21,9 +21,11 @@ const Home = () => {
       </section>
 
       {/* Display vacancies: */}
-      {vacancies.map((vacancy) => {
-        return <Vacancy key={vacancy.id} vacancy={vacancy} />;
-      })}
+      <section>
+        {vacancies.map((vacancy) => {
+          return <Vacancy key={vacancy.id} vacancy={vacancy} />;
+        })}
+      </section>
     </>
   );
 };
