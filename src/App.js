@@ -1,7 +1,15 @@
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 function App() {
   return (
     <div className="App">
-      <h1>Hello, developers!</h1>
+      <Router>
+        <Switch>
+          {/* Switch stops further finding of routes if the route matches. */}
+          <Route path="/" component="Home" exact></Route>
+          <Route path="/jobs" component="Jobs" exact></Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
