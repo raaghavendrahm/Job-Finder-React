@@ -13,6 +13,12 @@ const CreateJobs = ({ addVacancy }) => {
 
     // vacancy object is created with user input for title, company, city, and description using addVacancy:
     addVacancy({ title, company, city, description });
+
+    // Clearing input after submit:
+    setTitle('');
+    setCompany('');
+    setCity('');
+    setDescription('');
   };
 
   return (

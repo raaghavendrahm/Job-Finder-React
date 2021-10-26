@@ -20,6 +20,11 @@ const Home = () => {
     setVacancies([newVacancy, ...vacancies]);
   };
 
+  // Delete Vacancy
+  const deleteVacancy = (id) => {
+    setVacancies(vacancies.filter((vacancy) => vacancy.id !== id));
+  };
+
   return (
     <>
       <section className="hero">
@@ -36,7 +41,13 @@ const Home = () => {
       {/* Display vacancies: */}
       <section>
         {vacancies.map((vacancy) => {
-          return <Vacancy key={vacancy.id} vacancy={vacancy} />;
+          return (
+            <Vacancy
+              key={vacancy.id}
+              vacancy={vacancy}
+              deleteVacancy={deleteVacancy}
+            />
+          );
         })}
       </section>
     </>

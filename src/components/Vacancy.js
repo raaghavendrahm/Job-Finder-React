@@ -1,4 +1,4 @@
-const Vacancy = ({ vacancy }) => {
+const Vacancy = ({ vacancy, deleteVacancy }) => {
   return (
     <div className="box mt-4 mb-4">
       <h1 className="title is-5">{vacancy.title}</h1>
@@ -8,7 +8,12 @@ const Vacancy = ({ vacancy }) => {
       <p>{vacancy.description}</p>
       <div className="is-flex is-justify-content-space-between">
         <button className="button is-primary mt-4">Apply</button>
-        <button className="button is-danger mt-4">Delete</button>
+        <button
+          className="button is-danger mt-4"
+          onClick={() => deleteVacancy(vacancy.id)}
+        >
+          Delete
+        </button>
       </div>
     </div>
   );
