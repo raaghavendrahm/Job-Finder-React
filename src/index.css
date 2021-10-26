@@ -1,0 +1,6 @@
+/* To add margin bottom to inputs and textarea in CreateJobs form */
+
+input,
+textarea {
+  margin-bottom: 20px;
+}

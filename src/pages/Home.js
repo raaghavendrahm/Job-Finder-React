@@ -2,6 +2,7 @@ import Vacancy from '../components/Vacancy';
 import { vacancies as jobs } from './data';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import CreateJobs from '../components/CreateJobs';
 
 const Home = () => {
   // Initial state for vacancies is set to empty array:
@@ -18,6 +19,10 @@ const Home = () => {
           <p className="title">Find your dream job today</p>
           <p className="subtitle">Apply for any vacancies below</p>
         </div>
+      </section>
+
+      <section>
+        <CreateJobs />
       </section>
 
       {/* Display vacancies: */}
