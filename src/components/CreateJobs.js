@@ -1,24 +1,50 @@
+import { useState } from 'react';
+
 const CreateJobs = () => {
+  // Initial state for inputs of form:
+  const [title, setTitle] = useState('');
+  const [company, setCompany] = useState('');
+  const [city, setCity] = useState('');
+  const [description, setDescription] = useState('');
+
   return (
     <div className="box">
       <h1 className="title is-5">Create a Vacancy</h1>
       <form>
-        <input className="input" type="text" placeholder="Job Title" required />
+        <input
+          className="input"
+          type="text"
+          placeholder="Job Title"
+          value={title} // takes the user input for 'Job Title'
+          onChange={(e) => setTitle(e.target.value)} // sets the value of 'title' state to the value of user input for 'Job Title'. Note that it is a 2-way binding.
+          required
+        />
         {/* For each input and textarea, margin bottom of 20px is added in index.css where global styles are written*/}
 
         <input
           className="input"
           type="text"
           placeholder="Company Name"
+          value={company}
+          onChange={(e) => setCompany(e.target.value)}
           required
         />
 
-        <input className="input" type="text" placeholder="City Name" required />
+        <input
+          className="input"
+          type="text"
+          placeholder="City Name"
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
+          required
+        />
 
         <textarea
           className="input"
           type="text"
           placeholder="Description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
           required
         ></textarea>
 
