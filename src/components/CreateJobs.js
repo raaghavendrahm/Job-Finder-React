@@ -1,16 +1,26 @@
 import { useState } from 'react';
 
-const CreateJobs = () => {
+const CreateJobs = ({ addVacancy }) => {
   // Initial state for inputs of form:
   const [title, setTitle] = useState('');
   const [company, setCompany] = useState('');
   const [city, setCity] = useState('');
   const [description, setDescription] = useState('');
 
+  // Handle Submit
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // vacancy object is created with user input for title, company, city, and description using addVacancy:
+    addVacancy({ title, company, city, description });
+  };
+
   return (
     <div className="box">
       <h1 className="title is-5">Create a Vacancy</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
+        {/* On form submission, handleSubmit function is triggered that creates 'blog' object */}
+
         <input
           className="input"
           type="text"

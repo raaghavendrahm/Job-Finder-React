@@ -12,6 +12,14 @@ const Home = () => {
   useEffect(() => {
     setVacancies(jobs);
   }, []); // empty array dependecy
+
+  // Add Vacancy
+  const addVacancy = (vacancy) => {
+    const id = new Date().getTime().toString(); // to create a random unique id
+    const newVacancy = { id, ...vacancy };
+    setVacancies([newVacancy, ...vacancies]);
+  };
+
   return (
     <>
       <section className="hero">
@@ -22,7 +30,7 @@ const Home = () => {
       </section>
 
       <section>
-        <CreateJobs />
+        <CreateJobs addVacancy={addVacancy} />
       </section>
 
       {/* Display vacancies: */}
