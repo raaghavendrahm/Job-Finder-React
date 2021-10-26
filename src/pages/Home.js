@@ -25,6 +25,11 @@ const Home = () => {
     setVacancies(vacancies.filter((vacancy) => vacancy.id !== id));
   };
 
+  // Apply for Vacancy
+  const applyVacancy = (vacancy) => {
+    window.alert(`Successfully applied for the position ${vacancy.title}`);
+  };
+
   return (
     <>
       <section className="hero">
@@ -46,6 +51,7 @@ const Home = () => {
               key={vacancy.id}
               vacancy={vacancy}
               deleteVacancy={deleteVacancy}
+              applyVacancy={applyVacancy}
             />
           );
         })}
