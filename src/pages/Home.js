@@ -28,12 +28,31 @@ const Home = () => {
     setVacancies(jobs);
   }, []); // empty array dependecy */
 
-  // Add Vacancy
+  // Add Vacancy (with server):
+
+  // To create a vacancy not only in UI, but on server too:
+  const addVacancy = async (vacancy) => {
+    const res = await fetch('http://localhost:5000/vacancies', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(vacancy),
+    });
+
+    const newVacancy = await res.json(); // new task added
+
+    setVacancies([newVacancy, ...vacancies]); // new data is added to the existing tasks.
+
+    // Note that, with server as 'id' is automatically generated, the id value will be incremented for a new data and the new vacancy will be added to the bottom (not top).
+  };
+
+  /* // Before Server:
   const addVacancy = (vacancy) => {
     const id = new Date().getTime().toString(); // to create a random unique id
     const newVacancy = { id, ...vacancy };
     setVacancies([newVacancy, ...vacancies]);
-  };
+  }; */
 
   // Delete Vacancy
   const deleteVacancy = (id) => {
