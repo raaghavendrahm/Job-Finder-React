@@ -1,5 +1,5 @@
 import Vacancy from '../components/Vacancy';
-import { vacancies as jobs } from './data';
+// import { vacancies as jobs } from './data';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import CreateJobs from '../components/CreateJobs';
