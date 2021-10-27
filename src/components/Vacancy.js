@@ -15,7 +15,7 @@ const Vacancy = ({ vacancy, deleteVacancy, applyVacancy }) => {
         </button>
         <button
           className="button is-danger mt-4"
-          onClick={() => deleteVacancy(vacancy)}
+          onClick={() => deleteVacancy(vacancy.id)}
         >
           Delete
         </button>
