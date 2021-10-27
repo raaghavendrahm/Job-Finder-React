@@ -54,10 +54,20 @@ const Home = () => {
     setVacancies([newVacancy, ...vacancies]);
   }; */
 
-  // Delete Vacancy
-  const deleteVacancy = (id) => {
+  // Delete Vacancy (with server)
+
+  // To delete a vacancy not only in UI, but on server too:
+  const deleteVacancy = async (id) => {
+    await fetch(`http://localhost:5000/vacancies/${id}`, {
+      method: 'DELETE',
+    });
     setVacancies(vacancies.filter((vacancy) => vacancy.id !== id));
   };
+
+  /* // Without Server:
+  const deleteVacancy = (id) => {
+    setVacancies(vacancies.filter((vacancy) => vacancy.id !== id));
+  }; */
 
   // Apply for Vacancy
   const applyVacancy = (vacancy) => {
