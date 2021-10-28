@@ -1,5 +1,3 @@
-import React from 'react';
-
 const SignUp = () => {
   // On Sign Up
   const onSignUp = () => {

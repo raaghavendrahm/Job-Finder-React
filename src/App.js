@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Jobs from './pages/Jobs';
 import Navbar from './components/Navbar';
 import SignUp from './pages/SignUp';
+import LogIn from './pages/LogIn';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" component={Home} exact></Route>
           <Route path="/jobs" component={Jobs} exact></Route>
           <Route path="/signup" component={SignUp} exact></Route>
+          <Route path="/login" component={LogIn} exact></Route>
         </Switch>
       </Router>
     </div>
