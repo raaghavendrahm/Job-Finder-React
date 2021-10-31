@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 const LogIn = () => {
-  const [message, setMessage] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -11,7 +10,6 @@ const LogIn = () => {
 
     if (!email || !password) {
       alert('Please enter email and password');
-      return;
     } else if (email && password) {
       alert('Logged In Successfully!');
     }
@@ -37,7 +35,7 @@ const LogIn = () => {
         />
         <input
           className="input"
-          type="text"
+          type="password"
           placeholder="Password"
           required
           value={password}
