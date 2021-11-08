@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/index.css"],"names":[],"mappings":"AAEA,eAEE,kBACF","file":"main.17072379.chunk.css","sourcesContent":["/* To add margin bottom to inputs and textarea in CreateJobs form */\n\ninput,\ntextarea {\n  margin-bottom: 20px;\n}\n"]}
